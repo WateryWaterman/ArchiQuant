@@ -1,5 +1,21 @@
 # Verification record — 2026-09-24
 
+## Current evidence-based review update
+
+- Rollback checkpoint committed before changes: `7e7fb77`.
+- Production build and all **14 tests passed**. Added actual rotated-PDF parsing, label/position matching, pipe-layer exclusions, legend-area exclusion, repeated-dash reconstruction, description provenance and fail-without-substitute checks.
+- Real-sheet baseline in browser: original ONNX/WebGPU returned **0 points / 0 lines in 1.4 s**. The worksheet remained empty with a clear notice.
+- PDF extraction before refinements: **12 points / 172 whole-sheet strokes in 0.9 s** in the browser. This exposed legend strokes and fragmented dashed lines.
+- Final default: upper-left count area + left plan pipe area + repeated-dash joining. Browser returned **12 points / 104 pipe segments**, 116 rows, **109.88 m** at the manually clicked 57.217 px/m scale, in **0.2 s** on a warm run. Exact source scale gives 110.153 m. These are candidate plan lengths with documented exclusions and inferred gaps, not a whole-building accuracy benchmark.
+- Selected Cold pipe segment 08: aligned with the drawn kitchen supply; right-side explanation identified P-DCW and 11 joined strokes / 178.34 inferred gap pixels. All 10 inferred joins were visibly marked in orange.
+- Clicking the neighboring hot-water line selected its matching table row and details. Changing length to 6 m updated the row, formula, geometry and manual-edit provenance; Undo restored the result.
+- Desktop 1440×960 and normal approximately 746 px preview: quantity table left, plan center, inspector right. Sidebar removed, numbered step strip hidden, routine opened-project message absent. English scope menu exposes Plumbing plus five disabled future scopes.
+- Temporary viewport override reset after testing. No deployment performed.
+
+The entries below record earlier versions. In particular, automatic heuristic fallback on missing-model failure was removed by this update; failures now preserve the current worksheet and report an error. Explicit color-rule mode remains available for testing.
+
+## Earlier implementation checks
+
 - Production build: passed on Node 24.14.1 / Vite 6.4.3.
 - Automated suite: 9/9 passed; calibration, quantities, CSV/JSON, tiles, YOLO decoder, actual sample pixels, model graph, real reference geometry/provenance, and monochrome fallback behavior.
 - Dependency install audit after patching: 0 known vulnerabilities.

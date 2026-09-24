@@ -1,0 +1,47 @@
+{
+  "date": "2026-09-24T13:04:24.377Z",
+  "method": "PDF text + named CAD layers",
+  "elapsedSeconds": 0.1618262,
+  "points": 12,
+  "matchedLabeledFixtures": 12,
+  "expectedLabeledFixtures": 12,
+  "runs": 104,
+  "systems": {
+    "Soil": {
+      "segments": 25,
+      "measuredMetersIncludingRegularDashGaps": 18.731081238842343
+    },
+    "Waste": {
+      "segments": 22,
+      "measuredMetersIncludingRegularDashGaps": 32.46055896782357
+    },
+    "Vent": {
+      "segments": 20,
+      "measuredMetersIncludingRegularDashGaps": 8.902762822180978
+    },
+    "Cold": {
+      "segments": 24,
+      "measuredMetersIncludingRegularDashGaps": 30.04433640385383
+    },
+    "Hot": {
+      "segments": 13,
+      "measuredMetersIncludingRegularDashGaps": 20.01428289708329
+    }
+  },
+  "coverage": {
+    "countArea": "upper-left",
+    "pipeArea": "left-plans",
+    "bridgeDashes": true,
+    "inferredGapPixels": 682.2483221476494,
+    "skippedCurves": 84,
+    "skippedClosed": 0,
+    "layers": [
+      "P-SAN-BLCK",
+      "P-SAN-GRAY",
+      "P-SAN-VENT",
+      "P-DCW",
+      "P-DHW"
+    ]
+  },
+  "limits": "Same-sheet reference comparison, not held-out validation. Vector lengths include all recognized layers, unlike the partial manual reference. Offsite/schematic segments require review. Unsupported valves and unlabelled cleanouts are not inferred."
+}

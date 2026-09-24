@@ -1,0 +1,15 @@
+import fs from 'node:fs/promises';
+import * as pdfjs from 'pdfjs-dist/legacy/build/pdf.mjs';
+import {extractPdfEvidence,analyzePdf} from '../src/pdf-analysis.js';
+import {pixelLength} from '../src/core.js';
+const start=performance.now();
+const pdf=await pdfjs.getDocument({data:new Uint8Array(await fs.readFile('public/samples/real-plan/residential-asbuilt-p1.pdf')),isEvalSupported:false}).promise;
+const page=await pdf.getPage(1),view=page.getViewport({scale:2400/2384});
+const evidence=await extractPdfEvidence(page,view,await pdf.getOptionalContentConfig(),pdfjs.OPS);
+const result=analyzePdf(evidence,{width:2400,height:1696,countArea:'upper-left',pipeArea:'left-plans'});
+const expected=JSON.parse(await fs.readFile('public/samples/real-plan/example.json','utf8')).items.filter(i=>i.kind==='count').slice(0,6).flatMap(i=>i.geom.points.map(p=>({...p,label:i.label})));
+const matches=result.points.filter(p=>expected.some(q=>q.label===p.label&&Math.hypot(p.x-q.x,p.y-q.y)<12));
+const summary={date:new Date().toISOString(),method:'PDF text + named CAD layers',elapsedSeconds:(performance.now()-start)/1000,points:result.points.length,matchedLabeledFixtures:matches.length,expectedLabeledFixtures:expected.length,runs:result.runs.length,systems:Object.fromEntries([...new Set(result.runs.map(r=>r.group))].map(g=>[g,{segments:result.runs.filter(r=>r.group===g).length,measuredMetersIncludingRegularDashGaps:result.runs.filter(r=>r.group===g).reduce((n,r)=>n+pixelLength(r.points)/57.073,0)}])),coverage:result.coverage,limits:'Same-sheet reference comparison, not held-out validation. Vector lengths include all recognized layers, unlike the partial manual reference. Offsite/schematic segments require review. Unsupported valves and unlabelled cleanouts are not inferred.'};
+await fs.writeFile('tests/pdf-benchmark.json',JSON.stringify(summary,null,2));
+await fs.mkdir('tmp',{recursive:true});await fs.writeFile('tmp/pdf-evidence.json',JSON.stringify(evidence));
+console.log(JSON.stringify(summary,null,2));await pdf.destroy();
