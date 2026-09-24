@@ -98,9 +98,11 @@ Coordinates are pixels in the normalized displayed raster, origin top left. Coun
 ## Railway deployment (prepared, not performed)
 
 1. Connect `WateryWaterman/ArchiQuant`, branch `main`. This repository contains the app at its root: leave Railway's Root Directory unset (or `/`). Only use `/ArchiQuant` if you later move it into a monorepo subfolder.
-2. Use the included `railway.json`: build `npm ci --include=dev && npm run build`, start `npm start`, health check `/health`.
-3. Use Node 22.12+ or 24. The build explicitly includes development dependencies because Vite is needed even when `NODE_ENV=production`.
+2. Use the included `railway.json`: build `npm run build`, start `npm start`, health check `/health`. Railpack runs the dependency installation separately before the build. Remove any old dashboard build override containing `npm ci`.
+3. Use Node 22.12+ or 24. Railpack includes development dependencies by default (`NPM_CONFIG_PRODUCTION=false`); Vite is needed during the build. Do not override this with `NPM_CONFIG_PRODUCTION=true` or `NPM_CONFIG_OMIT=dev`.
 4. Railway supplies `PORT`; the server binds to `0.0.0.0`. Generate an HTTPS domain for WebGPU. No database, volume, secret or background cleanup service is needed.
+
+Do not run `npm ci` again inside Railway's build command: it removes `node_modules` and can fail with `EBUSY` when Railpack mounts its Vite cache at `node_modules/.vite`. The local setup instructions still use `npm ci`, where that build-cache mount is absent. See [Railpack's Node installation and cache documentation](https://railpack.com/languages/node).
 
 Both real-project PDF examples are tracked in Git and copied into the production build. The example chooser has links that open them directly in a new browser tab. After deployment, use these paths on your Railway domain:
 
