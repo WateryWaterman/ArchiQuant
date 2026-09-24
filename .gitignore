@@ -1,0 +1,7 @@
+node_modules/
+dist/
+*.log
+.env
+public/ort/
+.npm-cache/
+tmp/

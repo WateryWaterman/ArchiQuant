@@ -1,0 +1,958 @@
+{
+  "scale": {
+    "pixelsPerMeter": 57.073,
+    "reference": {
+      "points": [
+        {
+          "x": 201.634,
+          "y": 1540.47
+        },
+        {
+          "x": 429.926,
+          "y": 1540.47
+        }
+      ],
+      "distance": 4,
+      "unit": "m"
+    },
+    "confirmed": true
+  },
+  "items": [
+    {
+      "id": "p1-001",
+      "kind": "count",
+      "group": "Fixtures",
+      "label": "Water closet",
+      "qty": 2,
+      "unit": "ea",
+      "geom": {
+        "points": [
+          {
+            "x": 768.2,
+            "y": 266.4
+          },
+          {
+            "x": 687.8,
+            "y": 589.4
+          }
+        ]
+      },
+      "source": "manual",
+      "note": "Prepared reference takeoff, traced from P-1; not AI detection. Two WC tags, counted once in the below-slab view."
+    },
+    {
+      "id": "p1-002",
+      "kind": "count",
+      "group": "Fixtures",
+      "label": "Shower",
+      "qty": 2,
+      "unit": "ea",
+      "geom": {
+        "points": [
+          {
+            "x": 746.7,
+            "y": 227.1
+          },
+          {
+            "x": 727.3,
+            "y": 623.9
+          }
+        ]
+      },
+      "source": "manual",
+      "note": "Prepared reference takeoff, traced from P-1; not AI detection. Two SH tags. Repeated supply-view tags are not additional fixtures."
+    },
+    {
+      "id": "p1-003",
+      "kind": "count",
+      "group": "Fixtures",
+      "label": "Lavatory / laundry sink",
+      "qty": 3,
+      "unit": "ea",
+      "geom": {
+        "points": [
+          {
+            "x": 768.9,
+            "y": 339.5
+          },
+          {
+            "x": 669.9,
+            "y": 525.9
+          },
+          {
+            "x": 904.9,
+            "y": 633.9
+          }
+        ]
+      },
+      "source": "manual",
+      "note": "Prepared reference takeoff, traced from P-1; not AI detection. Three LAV tags, including the laundry sink. Anchors mark diagram tags."
+    },
+    {
+      "id": "p1-004",
+      "kind": "count",
+      "group": "Fixtures",
+      "label": "Kitchen sink",
+      "qty": 1,
+      "unit": "ea",
+      "geom": {
+        "points": [
+          {
+            "x": 1162.9,
+            "y": 494.6
+          }
+        ]
+      },
+      "source": "manual",
+      "note": "Prepared reference takeoff, traced from P-1; not AI detection. One KS tag."
+    },
+    {
+      "id": "p1-005",
+      "kind": "count",
+      "group": "Fixtures",
+      "label": "Washing machine connection",
+      "qty": 1,
+      "unit": "ea",
+      "geom": {
+        "points": [
+          {
+            "x": 818.1,
+            "y": 633.8
+          }
+        ]
+      },
+      "source": "manual",
+      "note": "Prepared reference takeoff, traced from P-1; not AI detection. One WM connection, not a second count for the water-heater terminals."
+    },
+    {
+      "id": "p1-006",
+      "kind": "count",
+      "group": "Fixtures",
+      "label": "Floor drain",
+      "qty": 3,
+      "unit": "ea",
+      "geom": {
+        "points": [
+          {
+            "x": 730.3,
+            "y": 339.5
+          },
+          {
+            "x": 751.4,
+            "y": 571.3
+          },
+          {
+            "x": 905,
+            "y": 586.1
+          }
+        ]
+      },
+      "source": "manual",
+      "note": "Prepared reference takeoff, traced from P-1; not AI detection. Three FD tags in the drainage view."
+    },
+    {
+      "id": "p1-007",
+      "kind": "count",
+      "group": "Valves",
+      "label": "Main shutoff valve",
+      "qty": 1,
+      "unit": "ea",
+      "geom": {
+        "points": [
+          {
+            "x": 387.7,
+            "y": 1237.3
+          }
+        ]
+      },
+      "source": "manual",
+      "note": "Prepared reference takeoff, traced from P-1; not AI detection. One explicitly drawn bow-tie valve. Fixture stop valves mentioned in notes are not separately counted."
+    },
+    {
+      "id": "p1-008",
+      "kind": "count",
+      "group": "Cleanouts",
+      "label": "Above-floor cleanout",
+      "qty": 2,
+      "unit": "ea",
+      "geom": {
+        "points": [
+          {
+            "x": 687.8,
+            "y": 548.5
+          },
+          {
+            "x": 1188.6,
+            "y": 465.8
+          }
+        ]
+      },
+      "source": "manual",
+      "note": "Prepared reference takeoff, traced from P-1; not AI detection. Two identified cleanout symbols: lower bathroom and kitchen."
+    },
+    {
+      "id": "p1-009",
+      "kind": "count",
+      "group": "Cleanouts",
+      "label": "Divided sanitary cleanout chamber",
+      "qty": 1,
+      "unit": "ea",
+      "geom": {
+        "points": [
+          {
+            "x": 258.4,
+            "y": 292.2
+          }
+        ]
+      },
+      "source": "manual",
+      "note": "Prepared reference takeoff, traced from P-1; not AI detection. One two-compartment chamber; lids are not counted as additional chambers. Storm chamber excluded."
+    },
+    {
+      "id": "p1-010",
+      "kind": "length",
+      "group": "Cold",
+      "label": "CW main · Ø25 mm",
+      "qty": 6.975,
+      "unit": "m",
+      "geom": {
+        "points": [
+          {
+            "x": 429.9,
+            "y": 1237.3
+          },
+          {
+            "x": 828,
+            "y": 1237.3
+          }
+        ]
+      },
+      "source": "manual",
+      "note": "Prepared reference takeoff, traced from P-1; not AI detection. Visible 2D centerline only; inspect endpoints and size transitions. Begins at the building wall. External supply-to-tower run is excluded."
+    },
+    {
+      "id": "p1-011",
+      "kind": "length",
+      "group": "Cold",
+      "label": "CW kitchen branch · Ø20 mm",
+      "qty": 6.518,
+      "unit": "m",
+      "geom": {
+        "points": [
+          {
+            "x": 828,
+            "y": 1237.3
+          },
+          {
+            "x": 1200,
+            "y": 1237.3
+          }
+        ]
+      },
+      "source": "manual",
+      "note": "Prepared reference takeoff, traced from P-1; not AI detection. Visible 2D centerline only; inspect endpoints and size transitions. "
+    },
+    {
+      "id": "p1-012",
+      "kind": "length",
+      "group": "Cold",
+      "label": "CW upper bathroom · Ø20 mm",
+      "qty": 5.323,
+      "unit": "m",
+      "geom": {
+        "points": [
+          {
+            "x": 748,
+            "y": 1237.3
+          },
+          {
+            "x": 748,
+            "y": 978.5
+          },
+          {
+            "x": 793,
+            "y": 978.5
+          }
+        ]
+      },
+      "source": "manual",
+      "note": "Prepared reference takeoff, traced from P-1; not AI detection. Visible 2D centerline only; inspect endpoints and size transitions. "
+    },
+    {
+      "id": "p1-013",
+      "kind": "length",
+      "group": "Cold",
+      "label": "CW upper WC terminal",
+      "qty": 0.657,
+      "unit": "m",
+      "geom": {
+        "points": [
+          {
+            "x": 748,
+            "y": 1030
+          },
+          {
+            "x": 785.5,
+            "y": 1030
+          }
+        ]
+      },
+      "source": "manual",
+      "note": "Prepared reference takeoff, traced from P-1; not AI detection. Visible 2D centerline only; inspect endpoints and size transitions. Final terminal reduction requires verification."
+    },
+    {
+      "id": "p1-014",
+      "kind": "length",
+      "group": "Cold",
+      "label": "CW upper lavatory terminal",
+      "qty": 0.657,
+      "unit": "m",
+      "geom": {
+        "points": [
+          {
+            "x": 748,
+            "y": 1102.5
+          },
+          {
+            "x": 785.5,
+            "y": 1102.5
+          }
+        ]
+      },
+      "source": "manual",
+      "note": "Prepared reference takeoff, traced from P-1; not AI detection. Visible 2D centerline only; inspect endpoints and size transitions. Final terminal reduction requires verification."
+    },
+    {
+      "id": "p1-015",
+      "kind": "length",
+      "group": "Cold",
+      "label": "CW lower bathroom · Ø20 mm",
+      "qty": 3.587,
+      "unit": "m",
+      "geom": {
+        "points": [
+          {
+            "x": 716.5,
+            "y": 1237.3
+          },
+          {
+            "x": 716.5,
+            "y": 1396.5
+          },
+          {
+            "x": 671,
+            "y": 1396.5
+          }
+        ]
+      },
+      "source": "manual",
+      "note": "Prepared reference takeoff, traced from P-1; not AI detection. Visible 2D centerline only; inspect endpoints and size transitions. "
+    },
+    {
+      "id": "p1-016",
+      "kind": "length",
+      "group": "Cold",
+      "label": "CW lower lavatory terminal",
+      "qty": 0.657,
+      "unit": "m",
+      "geom": {
+        "points": [
+          {
+            "x": 716.5,
+            "y": 1278.5
+          },
+          {
+            "x": 679,
+            "y": 1278.5
+          }
+        ]
+      },
+      "source": "manual",
+      "note": "Prepared reference takeoff, traced from P-1; not AI detection. Visible 2D centerline only; inspect endpoints and size transitions. "
+    },
+    {
+      "id": "p1-017",
+      "kind": "length",
+      "group": "Cold",
+      "label": "CW lower WC terminal",
+      "qty": 0.657,
+      "unit": "m",
+      "geom": {
+        "points": [
+          {
+            "x": 716.5,
+            "y": 1327.5
+          },
+          {
+            "x": 679,
+            "y": 1327.5
+          }
+        ]
+      },
+      "source": "manual",
+      "note": "Prepared reference takeoff, traced from P-1; not AI detection. Visible 2D centerline only; inspect endpoints and size transitions. "
+    },
+    {
+      "id": "p1-018",
+      "kind": "length",
+      "group": "Cold",
+      "label": "CW laundry / heater feed · Ø25 mm",
+      "qty": 2.973,
+      "unit": "m",
+      "geom": {
+        "points": [
+          {
+            "x": 828,
+            "y": 1237.3
+          },
+          {
+            "x": 828,
+            "y": 1407
+          }
+        ]
+      },
+      "source": "manual",
+      "note": "Prepared reference takeoff, traced from P-1; not AI detection. Visible 2D centerline only; inspect endpoints and size transitions. Shown feed only. Unshown appliance splits and vertical drops excluded."
+    },
+    {
+      "id": "p1-019",
+      "kind": "length",
+      "group": "Hot",
+      "label": "HW kitchen branch · Ø20 mm",
+      "qty": 8.051,
+      "unit": "m",
+      "geom": {
+        "points": [
+          {
+            "x": 740.5,
+            "y": 1244.5
+          },
+          {
+            "x": 1200,
+            "y": 1244.5
+          }
+        ]
+      },
+      "source": "manual",
+      "note": "Prepared reference takeoff, traced from P-1; not AI detection. Visible 2D centerline only; inspect endpoints and size transitions. "
+    },
+    {
+      "id": "p1-020",
+      "kind": "length",
+      "group": "Hot",
+      "label": "HW upper bathroom · Ø20 mm",
+      "qty": 5.703,
+      "unit": "m",
+      "geom": {
+        "points": [
+          {
+            "x": 740.5,
+            "y": 1244.5
+          },
+          {
+            "x": 740.5,
+            "y": 971.5
+          },
+          {
+            "x": 793,
+            "y": 971.5
+          }
+        ]
+      },
+      "source": "manual",
+      "note": "Prepared reference takeoff, traced from P-1; not AI detection. Visible 2D centerline only; inspect endpoints and size transitions. "
+    },
+    {
+      "id": "p1-021",
+      "kind": "length",
+      "group": "Hot",
+      "label": "HW upper lavatory terminal",
+      "qty": 0.788,
+      "unit": "m",
+      "geom": {
+        "points": [
+          {
+            "x": 740.5,
+            "y": 1095.5
+          },
+          {
+            "x": 785.5,
+            "y": 1095.5
+          }
+        ]
+      },
+      "source": "manual",
+      "note": "Prepared reference takeoff, traced from P-1; not AI detection. Visible 2D centerline only; inspect endpoints and size transitions. "
+    },
+    {
+      "id": "p1-022",
+      "kind": "length",
+      "group": "Hot",
+      "label": "HW heater to distribution",
+      "qty": 4.266,
+      "unit": "m",
+      "geom": {
+        "points": [
+          {
+            "x": 821.5,
+            "y": 1407
+          },
+          {
+            "x": 821.5,
+            "y": 1390
+          },
+          {
+            "x": 740.5,
+            "y": 1390
+          },
+          {
+            "x": 740.5,
+            "y": 1244.5
+          }
+        ]
+      },
+      "source": "manual",
+      "note": "Prepared reference takeoff, traced from P-1; not AI detection. Visible 2D centerline only; inspect endpoints and size transitions. Starts at drawn heater outlet. Ø25/20 transition position is approximate."
+    },
+    {
+      "id": "p1-023",
+      "kind": "length",
+      "group": "Hot",
+      "label": "HW lower shower terminal",
+      "qty": 1.218,
+      "unit": "m",
+      "geom": {
+        "points": [
+          {
+            "x": 740.5,
+            "y": 1390
+          },
+          {
+            "x": 671,
+            "y": 1390
+          }
+        ]
+      },
+      "source": "manual",
+      "note": "Prepared reference takeoff, traced from P-1; not AI detection. Visible 2D centerline only; inspect endpoints and size transitions. "
+    },
+    {
+      "id": "p1-024",
+      "kind": "length",
+      "group": "Hot",
+      "label": "HW lower lavatory terminal",
+      "qty": 1.078,
+      "unit": "m",
+      "geom": {
+        "points": [
+          {
+            "x": 740.5,
+            "y": 1285.5
+          },
+          {
+            "x": 679,
+            "y": 1285.5
+          }
+        ]
+      },
+      "source": "manual",
+      "note": "Prepared reference takeoff, traced from P-1; not AI detection. Visible 2D centerline only; inspect endpoints and size transitions. "
+    },
+    {
+      "id": "p1-025",
+      "kind": "length",
+      "group": "Soil",
+      "label": "Black water main · Ø100 mm",
+      "qty": 6.115,
+      "unit": "m",
+      "geom": {
+        "points": [
+          {
+            "x": 428.5,
+            "y": 280.11
+          },
+          {
+            "x": 777.5,
+            "y": 280.11
+          }
+        ]
+      },
+      "source": "manual",
+      "note": "Prepared reference takeoff, traced from P-1; not AI detection. Visible 2D centerline only; inspect endpoints and size transitions. Stops at the left-wall break. Off-building runs through diagram breaks are excluded."
+    },
+    {
+      "id": "p1-026",
+      "kind": "length",
+      "group": "Soil",
+      "label": "Black water lower WC · Ø100 mm",
+      "qty": 5.589,
+      "unit": "m",
+      "geom": {
+        "points": [
+          {
+            "x": 627,
+            "y": 280.11
+          },
+          {
+            "x": 633.97,
+            "y": 287.2
+          },
+          {
+            "x": 633.97,
+            "y": 520.27
+          },
+          {
+            "x": 687.7,
+            "y": 574
+          }
+        ]
+      },
+      "source": "manual",
+      "note": "Prepared reference takeoff, traced from P-1; not AI detection. Visible 2D centerline only; inspect endpoints and size transitions. "
+    },
+    {
+      "id": "p1-027",
+      "kind": "length",
+      "group": "Waste",
+      "label": "Gray water main · Ø100 mm",
+      "qty": 4.74,
+      "unit": "m",
+      "geom": {
+        "points": [
+          {
+            "x": 428.5,
+            "y": 304.3
+          },
+          {
+            "x": 699,
+            "y": 304.3
+          }
+        ]
+      },
+      "source": "manual",
+      "note": "Prepared reference takeoff, traced from P-1; not AI detection. Visible 2D centerline only; inspect endpoints and size transitions. Stops at the left-wall break; cleanout/grease-trap connections outside are not measured."
+    },
+    {
+      "id": "p1-028",
+      "kind": "length",
+      "group": "Waste",
+      "label": "Upper bathroom header · Ø75 mm",
+      "qty": 0.97,
+      "unit": "m",
+      "geom": {
+        "points": [
+          {
+            "x": 699,
+            "y": 304.3
+          },
+          {
+            "x": 754.38,
+            "y": 304.3
+          }
+        ]
+      },
+      "source": "manual",
+      "note": "Prepared reference takeoff, traced from P-1; not AI detection. Visible 2D centerline only; inspect endpoints and size transitions. "
+    },
+    {
+      "id": "p1-029",
+      "kind": "length",
+      "group": "Waste",
+      "label": "Upper shower branch · Ø75/50 mm",
+      "qty": 1.924,
+      "unit": "m",
+      "geom": {
+        "points": [
+          {
+            "x": 699,
+            "y": 304.3
+          },
+          {
+            "x": 776,
+            "y": 226
+          }
+        ]
+      },
+      "source": "manual",
+      "note": "Prepared reference takeoff, traced from P-1; not AI detection. Visible 2D centerline only; inspect endpoints and size transitions. Diameter transition and trap allowance excluded."
+    },
+    {
+      "id": "p1-030",
+      "kind": "length",
+      "group": "Waste",
+      "label": "Upper lavatory branch",
+      "qty": 0.568,
+      "unit": "m",
+      "geom": {
+        "points": [
+          {
+            "x": 754.38,
+            "y": 304.3
+          },
+          {
+            "x": 777.5,
+            "y": 327
+          }
+        ]
+      },
+      "source": "manual",
+      "note": "Prepared reference takeoff, traced from P-1; not AI detection. Visible 2D centerline only; inspect endpoints and size transitions. Drain connection to tag; trap shape is approximated as a centerline, not fitting length."
+    },
+    {
+      "id": "p1-031",
+      "kind": "length",
+      "group": "Waste",
+      "label": "Upper floor-drain branch · Ø50 mm",
+      "qty": 0.529,
+      "unit": "m",
+      "geom": {
+        "points": [
+          {
+            "x": 717,
+            "y": 304.3
+          },
+          {
+            "x": 728,
+            "y": 315.3
+          },
+          {
+            "x": 738,
+            "y": 326
+          }
+        ]
+      },
+      "source": "manual",
+      "note": "Prepared reference takeoff, traced from P-1; not AI detection. Visible 2D centerline only; inspect endpoints and size transitions. "
+    },
+    {
+      "id": "p1-032",
+      "kind": "length",
+      "group": "Waste",
+      "label": "Lower gray-water collector · Ø100 mm",
+      "qty": 4.002,
+      "unit": "m",
+      "geom": {
+        "points": [
+          {
+            "x": 489.69,
+            "y": 304.3
+          },
+          {
+            "x": 651.18,
+            "y": 465.82
+          }
+        ]
+      },
+      "source": "manual",
+      "note": "Prepared reference takeoff, traced from P-1; not AI detection. Visible 2D centerline only; inspect endpoints and size transitions. "
+    },
+    {
+      "id": "p1-033",
+      "kind": "length",
+      "group": "Waste",
+      "label": "Kitchen / laundry header · Ø75 mm",
+      "qty": 3.272,
+      "unit": "m",
+      "geom": {
+        "points": [
+          {
+            "x": 651.18,
+            "y": 465.82
+          },
+          {
+            "x": 837.92,
+            "y": 465.82
+          }
+        ]
+      },
+      "source": "manual",
+      "note": "Prepared reference takeoff, traced from P-1; not AI detection. Visible 2D centerline only; inspect endpoints and size transitions. "
+    },
+    {
+      "id": "p1-034",
+      "kind": "length",
+      "group": "Waste",
+      "label": "Kitchen branch · Ø50 mm",
+      "qty": 6.575,
+      "unit": "m",
+      "geom": {
+        "points": [
+          {
+            "x": 837.92,
+            "y": 465.82
+          },
+          {
+            "x": 1183,
+            "y": 465.82
+          },
+          {
+            "x": 1188,
+            "y": 471
+          },
+          {
+            "x": 1188,
+            "y": 494
+          }
+        ]
+      },
+      "source": "manual",
+      "note": "Prepared reference takeoff, traced from P-1; not AI detection. Visible 2D centerline only; inspect endpoints and size transitions. "
+    },
+    {
+      "id": "p1-035",
+      "kind": "length",
+      "group": "Waste",
+      "label": "Lower bathroom branch · Ø75/50 mm",
+      "qty": 3.144,
+      "unit": "m",
+      "geom": {
+        "points": [
+          {
+            "x": 651.18,
+            "y": 465.82
+          },
+          {
+            "x": 706.06,
+            "y": 520.69
+          },
+          {
+            "x": 706.06,
+            "y": 622.5
+          }
+        ]
+      },
+      "source": "manual",
+      "note": "Prepared reference takeoff, traced from P-1; not AI detection. Visible 2D centerline only; inspect endpoints and size transitions. Approximate diameter transition; shared branch counted once."
+    },
+    {
+      "id": "p1-036",
+      "kind": "length",
+      "group": "Waste",
+      "label": "Lower lavatory branch · Ø38 mm",
+      "qty": 0.78,
+      "unit": "m",
+      "geom": {
+        "points": [
+          {
+            "x": 679.5,
+            "y": 494
+          },
+          {
+            "x": 688,
+            "y": 502.5
+          },
+          {
+            "x": 688,
+            "y": 535
+          }
+        ]
+      },
+      "source": "manual",
+      "note": "Prepared reference takeoff, traced from P-1; not AI detection. Visible 2D centerline only; inspect endpoints and size transitions. "
+    },
+    {
+      "id": "p1-037",
+      "kind": "length",
+      "group": "Waste",
+      "label": "Lower floor-drain branch · Ø50 mm",
+      "qty": 0.569,
+      "unit": "m",
+      "geom": {
+        "points": [
+          {
+            "x": 706.06,
+            "y": 547
+          },
+          {
+            "x": 724,
+            "y": 565
+          },
+          {
+            "x": 729,
+            "y": 570
+          }
+        ]
+      },
+      "source": "manual",
+      "note": "Prepared reference takeoff, traced from P-1; not AI detection. Visible 2D centerline only; inspect endpoints and size transitions. "
+    },
+    {
+      "id": "p1-038",
+      "kind": "length",
+      "group": "Waste",
+      "label": "Laundry collector · Ø75/50 mm",
+      "qty": 3.12,
+      "unit": "m",
+      "geom": {
+        "points": [
+          {
+            "x": 830.9,
+            "y": 465.82
+          },
+          {
+            "x": 837.92,
+            "y": 472.88
+          },
+          {
+            "x": 837.92,
+            "y": 641
+          }
+        ]
+      },
+      "source": "manual",
+      "note": "Prepared reference takeoff, traced from P-1; not AI detection. Visible 2D centerline only; inspect endpoints and size transitions. Shared collector plus washing-machine approach; verify final reduction."
+    },
+    {
+      "id": "p1-039",
+      "kind": "length",
+      "group": "Waste",
+      "label": "Laundry floor-drain branch · Ø50 mm",
+      "qty": 1.116,
+      "unit": "m",
+      "geom": {
+        "points": [
+          {
+            "x": 837.92,
+            "y": 540
+          },
+          {
+            "x": 879,
+            "y": 581
+          },
+          {
+            "x": 883,
+            "y": 585
+          }
+        ]
+      },
+      "source": "manual",
+      "note": "Prepared reference takeoff, traced from P-1; not AI detection. Visible 2D centerline only; inspect endpoints and size transitions. "
+    },
+    {
+      "id": "p1-040",
+      "kind": "length",
+      "group": "Waste",
+      "label": "Laundry sink branch · Ø38 mm",
+      "qty": 1.156,
+      "unit": "m",
+      "geom": {
+        "points": [
+          {
+            "x": 837.92,
+            "y": 586
+          },
+          {
+            "x": 879,
+            "y": 628
+          },
+          {
+            "x": 883,
+            "y": 634
+          }
+        ]
+      },
+      "source": "manual",
+      "note": "Prepared reference takeoff, traced from P-1; not AI detection. Visible 2D centerline only; inspect endpoints and size transitions. "
+    }
+  ]
+}

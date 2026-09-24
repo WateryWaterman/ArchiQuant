@@ -1,0 +1,9 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
+import {fileURLToPath} from 'node:url';
+import sharp from 'sharp';
+import {report} from '../src/core.js';
+const directory=new URL('../public/samples/real-plan/',import.meta.url);
+test('real reference has bounded geometry, manual provenance and counts without duplicate views',async()=>{const example=JSON.parse(await readFile(new URL('example.json',directory)));const exported=JSON.parse(await readFile(new URL('worked-takeoff.json',directory)));assert.equal(example.items.length,40);assert.ok(example.items.every(i=>i.source==='manual'));assert.equal(new Set(example.items.map(i=>i.id)).size,40);for(const item of example.items)for(const p of item.geom.points){assert.ok(p.x>=0&&p.x<=example.width);assert.ok(p.y>=0&&p.y<=example.height);}const recalculated=report(example.items,exported.scale);assert.deepEqual(recalculated,exported);assert.equal(exported.items.filter(i=>i.kind==='count').reduce((sum,i)=>sum+i.qty,0),16);assert.equal(exported.items.find(i=>i.label==='Floor drain').qty,3);assert.equal(exported.scale.pixelsPerMeter,57.073);});
+test('sample-color heuristic does not pretend to recognize the monochrome real sheet',async()=>{const {data,info}=await sharp(fileURLToPath(new URL('residential-asbuilt-p1.png',directory))).ensureAlpha().raw().toBuffer({resolveWithObject:true});const messages=[];globalThis.self={postMessage:m=>messages.push(m)};await import('../src/engine.worker.js');await self.onmessage({data:{width:info.width,height:info.height,pixels:data.buffer.slice(data.byteOffset,data.byteOffset+data.byteLength),mode:'heuristic'}});const done=messages.find(m=>m.type==='done');assert.ok(done,JSON.stringify(messages));assert.equal(done.points.length,0);assert.equal(done.runs.length,0);});
