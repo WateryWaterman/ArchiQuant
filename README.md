@@ -97,10 +97,17 @@ Coordinates are pixels in the normalized displayed raster, origin top left. Coun
 
 ## Railway deployment (prepared, not performed)
 
-1. Push this folder to your repository. If using a monorepo, set the Railway service root directory to `/ArchiQuant`.
-2. Use the included `railway.json`: build `npm ci && npm run build`, start `npm start`, health check `/health`.
-3. Use Node 22.12+ or 24. Install development dependencies during build (Vite is needed); do not set `NPM_CONFIG_PRODUCTION=true` for the build.
+1. Connect `WateryWaterman/ArchiQuant`, branch `main`. This repository contains the app at its root: leave Railway's Root Directory unset (or `/`). Only use `/ArchiQuant` if you later move it into a monorepo subfolder.
+2. Use the included `railway.json`: build `npm ci --include=dev && npm run build`, start `npm start`, health check `/health`.
+3. Use Node 22.12+ or 24. The build explicitly includes development dependencies because Vite is needed even when `NODE_ENV=production`.
 4. Railway supplies `PORT`; the server binds to `0.0.0.0`. Generate an HTTPS domain for WebGPU. No database, volume, secret or background cleanup service is needed.
+
+Both real-project PDF examples are tracked in Git and copied into the production build. The example chooser has links that open them directly in a new browser tab. After deployment, use these paths on your Railway domain:
+
+- `/samples/real-plan/residential-asbuilt-p1.pdf` — original vector drawing.
+- `/samples/hsu-house/hsu-p301-scan.pdf` — image-only scan evaluation copy.
+
+The server returns `application/pdf` for both; no external source site, upload store, or account is needed to open them. The synthetic PDF is also included at `/samples/residence-plumbing.pdf`.
 
 ## Structure and extension points
 
