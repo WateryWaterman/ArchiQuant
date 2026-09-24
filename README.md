@@ -17,14 +17,16 @@ Open **http://localhost:3000**. `PORT` overrides 3000. For development, run `npm
 
 ## Project workflow
 
-The app opens on **Projects**. Create a named project or reopen an existing one. Each project has its own drawing, calibration, selected outcomes and quantities saved on this device.
+The app opens on **Projects**, with two **Example projects** available on every deployment, including a visitor's first visit: **Residential water & drainage · P-1** and **HSU House · P-301.00**. Click either to open its included drawing directly at scale calibration, or use its **View included PDF** link. No upload or prior browser data is required. Reopening an example resumes your saved edits; it does not reset them or supply precomputed AI quantities.
+
+**Create project → Start from** lets you choose your own upload or either included PDF as a separate named copy. Each project has its own drawing, calibration, selected outcomes and quantities saved in this browser. The bundled examples remain available if local storage is cleared; your edits are local to this browser and are not shared across devices.
 
 **Projects → Drawing & scope → Set scale → Calculate → Results** remain separate screens, without a persistent numbered step strip or decorative sidebar. The calculation screen shows actual processing progress and supports cancellation. Results use three columns: editable quantities on the **left**, drawing in the **center**, and element descriptions/properties on the **right**. Narrow phones can scroll across the workspace. Selecting a row focuses and highlights its geometry; selecting an overlay highlights and scrolls to its row.
 
 ## Try the real drawing
 
-1. Create a project. Choose **an example → Use real drawing** and keep both plumbing outcomes selected.
-2. Choose **Set scale → Find scale bar**. Click both endpoints of the printed **0–4 m** bar and confirm **4 meters**.
+1. From **Projects → Example projects**, open **Residential water & drainage · P-1**. Both plumbing outcomes are selected by default.
+2. Choose **Find scale bar**. Click both endpoints of the printed **0–4 m** bar and confirm **4 meters**.
 3. Continue to **Calculate** with **Automatic** selected. Keep the count area on **Upper-left plan** to avoid the repeated view and legend. Keep Pipe area on **Left plan views** to exclude the right-side legend; counts and pipes have independent area selections.
 4. Run takeoff: the original PDF is read in the browser. It yields **12 tagged fixtures/drains** and **104 pipe segments** when regular dash joining is enabled (158 separate strokes when disabled). The four unlabelled valve/cleanout reference points are not automatically inferred.
 5. Select a row or overlay. The right column explains the label or CAD layer, measurement formula and limitations; orange dashes mark inferred joins on the selected pipe. Edit and export CSV/JSON. Descriptions are included in exported notes.
@@ -35,7 +37,7 @@ The original public P-1 PDF, raster, attribution, scope exclusions and reference
 
 ## Try a scanned construction PDF
 
-Choose **Use scanned drawing** for the second real project, **HSU House**. The included image-only PDF is a compressed raster derivative of a real construction sheet, not a physical paper scan. Use **Find scale bar**, click the added **10 ft** guide, select **Feet**, and confirm. Automatic mode uses local **neural OCR** to find fixture tags; type verified mappings such as `P-1=Water closet` if needed. Unknown P-number tags remain unmapped. Choose an analysis area to exclude legends and repeated views.
+From **Projects → Example projects**, open **HSU House · P-301.00**. The included image-only PDF is a compressed raster derivative of a real construction sheet, not a physical paper scan. Use **Find scale bar**, click the added **10 ft** guide, select **Feet**, and confirm. Automatic mode uses local **neural OCR** to find fixture tags; type verified mappings such as `P-1=Water closet` if needed. Unknown P-number tags remain unmapped. Choose an analysis area to exclude legends and repeated views.
 
 The first browser run took **9.7 seconds**, finding five of six visible numbered tags plus two note-only candidates requiring review. It does not find every fixture or accessory. The bundled trained YOLO model ran on **WebGPU in 4.4 seconds but returned false positives** on this scan; it is available under **Experimental detector comparison**, disabled by default. These are not verified RTX 3060 benchmarks.
 
