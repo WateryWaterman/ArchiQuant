@@ -3,5 +3,6 @@ dist/
 *.log
 .env
 public/ort/
+public/ocr/
 .npm-cache/
 tmp/

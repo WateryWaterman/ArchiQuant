@@ -4,7 +4,7 @@ import {stat} from 'node:fs/promises';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 const root = path.join(path.dirname(fileURLToPath(import.meta.url)), 'dist');
-const mime = {'.html':'text/html; charset=utf-8','.js':'text/javascript','.mjs':'text/javascript','.css':'text/css','.json':'application/json','.png':'image/png','.svg':'image/svg+xml','.wasm':'application/wasm','.onnx':'application/octet-stream','.pdf':'application/pdf'};
+const mime = {'.html':'text/html; charset=utf-8','.js':'text/javascript','.mjs':'text/javascript','.css':'text/css','.json':'application/json','.png':'image/png','.jpg':'image/jpeg','.jpeg':'image/jpeg','.svg':'image/svg+xml','.wasm':'application/wasm','.onnx':'application/octet-stream','.pdf':'application/pdf'};
 const server = http.createServer(async (req,res) => {
   if(req.url === '/health') {res.writeHead(200,{'Content-Type':'application/json'}); return res.end('{"status":"ok"}');}
   if(!['GET','HEAD'].includes(req.method)) {res.writeHead(405);return res.end('Uploads stay in your browser.');}

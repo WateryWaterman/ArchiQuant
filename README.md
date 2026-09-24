@@ -1,6 +1,6 @@
 # ArchiQuant
 
-A browser-first residential plumbing takeoff workspace: load a PDF/image, select outcomes, calibrate, detect or trace, review, and export. Built in this folder; **not deployed**. The original sample and tiny model are shipped, so a visitor needs no API key, account, model download configuration or Python setup.
+A browser-first residential plumbing takeoff workspace: load a PDF/image, select outcomes, calibrate, detect or trace, review, and export. Built in this folder; **not deployed**. The examples, neural OCR weights and experimental small ONNX model are shipped, so a visitor needs no API key, account, model download configuration or Python setup.
 
 ## Run locally
 
@@ -33,6 +33,14 @@ The app opens on **Projects**. Create a named project or reopen an existing one.
 
 The original public P-1 PDF, raster, attribution, scope exclusions and reference CSV/JSON are in [public/samples/real-plan](public/samples/real-plan/README.md). The detailed sheet is marked as-built and includes below-slab and above-slab views; its constructed condition is not independently verified. These are **partial visible-plan quantities**: gas, storm/footing drainage, offsite diagram breaks, vertical runs, fittings and unshown branches are excluded. The source title block is retained; public access does not establish a redistribution license. Review source permissions before public distribution.
 
+## Try a scanned construction PDF
+
+Choose **Use scanned drawing** for the second real project, **HSU House**. The included image-only PDF is a compressed raster derivative of a real construction sheet, not a physical paper scan. Use **Find scale bar**, click the added **10 ft** guide, select **Feet**, and confirm. Automatic mode uses local **neural OCR** to find fixture tags; type verified mappings such as `P-1=Water closet` if needed. Unknown P-number tags remain unmapped. Choose an analysis area to exclude legends and repeated views.
+
+The first browser run took **9.7 seconds**, finding five of six visible numbered tags plus two note-only candidates requiring review. It does not find every fixture or accessory. The bundled trained YOLO model ran on **WebGPU in 4.4 seconds but returned false positives** on this scan; it is available under **Experimental detector comparison**, disabled by default. These are not verified RTX 3060 benchmarks.
+
+In Results, **Trace assist** follows pipe ink between user-selected endpoints/bends; **Enter / Finish line** creates an editable length. Select the pipe system yourself. Use **Length** for faint, dashed or obscured routes. Scan pipe length stays unmeasured until traced. One tested HSU bend measured **1.61 m** at the source scale, not a whole-network total. Descriptions explain OCR, legend interpretation and guided tracing, and are retained in exported notes. See [SCAN_EVALUATION.md](SCAN_EVALUATION.md) for measured results, missed tags, rejected models and reproduction steps.
+
 ## Try the detector sample
 
 1. Create a project, choose **an example → Use detector sample**, select **Plumbing** and leave both outcomes selected.
@@ -58,7 +66,7 @@ After calibration, turn off **Enable automatic calculation** and choose **Contin
 
 ## Processing and performance
 
-Drawings are normalized to a maximum 2,400 pixels on the longest side before calibration. Inference runs in a dedicated worker over overlapping 640-pixel tiles with 64-pixel overlap; this yields at most 25 tiles at the input limit, with an additional hard check at 36 tiles. Detections are merged across tile boundaries. Progress, elapsed time, selected backend and notices are visible. Cancel terminates the worker; existing quantities remain intact. A 150-second work budget and 180-second watchdog bound processing; timeout stops processing without inserting substitute results. PDF input is also bounded to 50,000 text items and 250,000 drawing operators.
+Drawings are normalized to a maximum 2,400 pixels on the longest side before calibration. Synthetic/custom detector inference runs in a dedicated worker over overlapping 640-pixel tiles with 64-pixel overlap; this yields at most 25 tiles at the input limit, with an additional hard check at 36 tiles. Detections are merged across tile boundaries. Progress, elapsed time, selected backend and notices are visible. Cancel terminates the worker; existing quantities remain intact. A 150-second work budget and 180-second watchdog bound processing; timeout stops processing without inserting substitute results. Scan OCR uses overlapping 720-pixel crops; the optional scan symbol model uses 320-pixel crops enlarged to 640 (96-tile cap). Both run locally with the same time limits. PDF input is also bounded to 50,000 text items and 250,000 drawing operators.
 
 Validation on the available browser: **1.2 seconds** for the sample's first model run using WebGPU, producing 14 points and 51 pipe segments. The automated Node explicit color-rule test took about **0.26 seconds**. Hardware identity was not established; these are **not verified RTX 3060 benchmark numbers**. A target-device acceptance check should record a cold run after clearing browser cache, from Run takeoff to completed notice. The target is under 3 minutes and the requested ceiling is 20 minutes.
 
@@ -97,6 +105,7 @@ Coordinates are pixels in the normalized displayed raster, origin top left. Coun
 ## Structure and extension points
 
 - `src/main.js`: scope/outcome selection, document handling, editor, local persistence and exports.
+- `src/scan.worker.js` and `src/scan-core.js`: neural OCR, optional trained scan detector, tag interpretation and guided raster tracing.
 - `src/pdf-analysis.js`: PDF label/layer extraction, coordinate transforms and conservative dash reconstruction.
 - `src/explanations.js`: deterministic element descriptions and export notes; no LLM.
 - `src/core.js`: geometry, unit conversion, schema, CSV, tiling and YOLO postprocessing; independent of the UI.
@@ -117,4 +126,4 @@ Implementation references: [ONNX Runtime WebGPU](https://onnxruntime.ai/docs/tut
 
 See [ALGORITHM_NOTES.md](ALGORITHM_NOTES.md) for the measured comparison, method selection, limits, model research and reproduction commands. On the real sheet, the bundled WebGPU model returned zero detections in 1.4 seconds; PDF evidence extraction took 0.9 seconds in the browser before dash joining. These are not RTX 3060 hardware-certified or general-accuracy benchmarks.
 
-The pre-change code/sample checkpoint is commit **7e7fb77**. Git tracks code and bundled assets, not browser-local project data. Export project reports separately.
+The checkpoint before scanned-PDF work is **c4d60a2**. The earlier pre-UI/evidence checkpoint is **7e7fb77**. Git tracks code and bundled assets, not browser-local project data. Export project reports separately.

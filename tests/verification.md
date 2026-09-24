@@ -45,3 +45,14 @@ Limits: no verified RTX 3060 hardware benchmark; no independently trained plumbi
 - Changed Water closet quantity from 2 to 3: matching markers increased to 3 and total increased from 16 to 17. Undo restored the original reference.
 - Re-ran the detector sample through the standalone calculation screen: visible progress, disabled step navigation during processing, automatic Results transition, 14 points and 51 segments in 1.0 seconds.
 - Disabled Assist with AI and continued through the manual-only route to Results without inference. CSV/JSON buttons were exercised again; schema and quantities are covered by the automated suite and the reference reports. The earlier downloadable-file verification above predates this UI update.
+# Scanned-PDF update — 2026-09-24
+
+- Rollback checkpoint: `c4d60a2`; separate from browser project storage.
+- Actual HSU image-only PDF loaded through the browser PDF renderer, calibrated by two clicks on its added 10 ft guide. Automated check confirms zero PDF text items.
+- First neural OCR run 9.7 s; warm runs 8.9–9.5 s. Seven candidates: five of six numbered fixture tags and two note-only abbreviations. No prepared quantities used.
+- Experimental trained YOLO model ran with WebGPU in 4.4 s: nine false positives. Disabled by default and described as failed on this scan. Larger model also evaluated offline and rejected; see `SCAN_EVALUATION.md`.
+- Verified editable legend mappings, selected-row focus/overlay synchronization, removal of two note-only candidates, temporary manual count add/delete, guided pipe tracing, label/note editing, region selection/clear, cancellation preserving existing items, and reopening the saved project.
+- Saved evaluation project has five retained tag candidates plus one user-guided pipe route of 2.311 m at the clicked scale. This browser route is longer than the separate 1.609344 m / 88-pixel unit-test segment; neither is a complete system takeoff. The unresolved P-4 tag is retained explicitly unmapped.
+- CSV and JSON export buttons invoked successfully; geometry/schema/description correctness checked in automated tests. Downloaded file contents were not independently opened during this update.
+- Desktop 1440px and normal narrow preview visually checked; viewport override reset.
+- 20 automated tests pass; production build succeeds. Target RTX 3060 hardware identity and physically scanned/noisy field documents remain unverified.

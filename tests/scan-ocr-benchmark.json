@@ -1,0 +1,99 @@
+{
+  "seconds": 7.7548674,
+  "backend": "Tesseract LSTM WASM / Node",
+  "input": "HSU image-only sample raster, 2400 x 1600",
+  "method": "720px crops, 120px overlap, 3x enlargement, luminance cutoff 170, OCR score >=60",
+  "tagLocalization": {
+    "visibleNumberedTags": 6,
+    "matchedTags": 5,
+    "missedTags": [
+      {
+        "tag": "P-4",
+        "x": 408,
+        "y": 526,
+        "view": "ground"
+      }
+    ],
+    "totalCandidates": 6
+  },
+  "points": [
+    {
+      "x": 612.5,
+      "y": 1173.3333333333333,
+      "label": "Unmapped fixture tag P-1",
+      "score": 0.88,
+      "analysis": {
+        "method": "Neural OCR + exact legend rule",
+        "classification": "Unmapped fixture tag P-1 (tag candidate)",
+        "evidence": "Tesseract LSTM read \"P-1\" from image pixels using overlapping enlarged crops and a dark-ink threshold. No legend mapping supplied; the fixture type is unknown. Marker is at the text, not a verified fixture center.",
+        "confidence": "OCR score 88% (not probability of a fixture)",
+        "limitations": "Check the label leader, relocate to the symbol, and remove notes, legend entries or duplicate views. OCR alone does not verify physical equipment."
+      }
+    },
+    {
+      "x": 976.5,
+      "y": 1208,
+      "label": "Unmapped fixture tag P-4",
+      "score": 0.87,
+      "analysis": {
+        "method": "Neural OCR + exact legend rule",
+        "classification": "Unmapped fixture tag P-4 (tag candidate)",
+        "evidence": "Tesseract LSTM read \"P-4\" from image pixels using overlapping enlarged crops and a dark-ink threshold. No legend mapping supplied; the fixture type is unknown. Marker is at the text, not a verified fixture center.",
+        "confidence": "OCR score 87% (not probability of a fixture)",
+        "limitations": "Check the label leader, relocate to the symbol, and remove notes, legend entries or duplicate views. OCR alone does not verify physical equipment."
+      }
+    },
+    {
+      "x": 660,
+      "y": 398.66666666666663,
+      "label": "Lavatory",
+      "score": 0.86,
+      "analysis": {
+        "method": "Neural OCR + exact legend rule",
+        "classification": "Lavatory (tag candidate)",
+        "evidence": "Tesseract LSTM read \"LAV\" from image pixels using overlapping enlarged crops and a dark-ink threshold. The legend maps this exact token to Lavatory. Marker is at the text, not a verified fixture center.",
+        "confidence": "OCR score 86% (not probability of a fixture)",
+        "limitations": "Check the label leader, relocate to the symbol, and remove notes, legend entries or duplicate views. OCR alone does not verify physical equipment."
+      }
+    },
+    {
+      "x": 739.5,
+      "y": 1206,
+      "label": "Unmapped fixture tag P-3",
+      "score": 0.81,
+      "analysis": {
+        "method": "Neural OCR + exact legend rule",
+        "classification": "Unmapped fixture tag P-3 (tag candidate)",
+        "evidence": "Tesseract LSTM read \"P-3\" from image pixels using overlapping enlarged crops and a dark-ink threshold. No legend mapping supplied; the fixture type is unknown. Marker is at the text, not a verified fixture center.",
+        "confidence": "OCR score 81% (not probability of a fixture)",
+        "limitations": "Check the label leader, relocate to the symbol, and remove notes, legend entries or duplicate views. OCR alone does not verify physical equipment."
+      }
+    },
+    {
+      "x": 593.3333333333333,
+      "y": 1230,
+      "label": "Unmapped fixture tag P-2",
+      "score": 0.71,
+      "analysis": {
+        "method": "Neural OCR + exact legend rule",
+        "classification": "Unmapped fixture tag P-2 (tag candidate)",
+        "evidence": "Tesseract LSTM read \"P-2\" from image pixels using overlapping enlarged crops and a dark-ink threshold. No legend mapping supplied; the fixture type is unknown. Marker is at the text, not a verified fixture center.",
+        "confidence": "OCR score 71% (not probability of a fixture)",
+        "limitations": "Check the label leader, relocate to the symbol, and remove notes, legend entries or duplicate views. OCR alone does not verify physical equipment."
+      }
+    },
+    {
+      "x": 695.6666666666667,
+      "y": 1210,
+      "label": "Unmapped fixture tag P-2",
+      "score": 0.67,
+      "analysis": {
+        "method": "Neural OCR + exact legend rule",
+        "classification": "Unmapped fixture tag P-2 (tag candidate)",
+        "evidence": "Tesseract LSTM read \"P-2\" from image pixels using overlapping enlarged crops and a dark-ink threshold. No legend mapping supplied; the fixture type is unknown. Marker is at the text, not a verified fixture center.",
+        "confidence": "OCR score 67% (not probability of a fixture)",
+        "limitations": "Check the label leader, relocate to the symbol, and remove notes, legend entries or duplicate views. OCR alone does not verify physical equipment."
+      }
+    }
+  ]
+}

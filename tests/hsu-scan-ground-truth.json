@@ -1,0 +1,13 @@
+{
+  "basis": "Manual visual inspection of the six P-number fixture tags on HSU House P-301.00, at 2400 x 1600. Tag localization evaluation, not complete fixture quantity ground truth. Never loaded by the application.",
+  "tags": [
+    {"tag":"P-4","x":408,"y":526,"view":"ground"},
+    {"tag":"P-1","x":612.5,"y":1173,"view":"second"},
+    {"tag":"P-2","x":593.2,"y":1229.8,"view":"second"},
+    {"tag":"P-2","x":695.5,"y":1211.5,"view":"second"},
+    {"tag":"P-3","x":739.3,"y":1205.8,"view":"second"},
+    {"tag":"P-4","x":976.5,"y":1207.7,"view":"second"}
+  ],
+  "pipe": {"basis":"One manually selected solid two-leg water route; not total building pipe length", "points":[{"x":618,"y":468},{"x":666,"y":468},{"x":666,"y":508}],"pixels":88,"metersAtSourceScale":1.609344},
+  "unresolved": "P-4 is listed as shower on the source legend, but its second-floor plan position appears over a sink. Keep it unmapped pending review. Unlabelled and existing equipment, valves, drains and cleanouts are not covered by this tag recall evaluation."
+}

@@ -1,5 +1,7 @@
 # Detection evaluation and method choices
 
+**New scanned-PDF evaluation:** see [SCAN_EVALUATION.md](SCAN_EVALUATION.md). The model statements below describe the earlier vector-PDF work; the scan update adds neural OCR and an explicitly experimental trained YOLO model.
+
 2026-09-24. Code/assets before this work are committed as `7e7fb77`.
 
 ## What changed and why
